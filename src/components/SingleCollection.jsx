@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 const SingleCollection = (products) => {
 
+console.log(products.products);
 
     const [filteredProducts, setFilteredProducts] = useState(products.products.slice(0, 12));
 

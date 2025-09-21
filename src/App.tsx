@@ -48,7 +48,7 @@ const App = () => {
 
   return (
     <>
-      {/* <Navbar /> */}
+      
       <NavBarWithSubmenu />
       <ScrollToTop />
       <Routes>
@@ -65,7 +65,6 @@ const App = () => {
         <Route path="/product/category/:category" element={<AllProductPage />} />
         <Route path="/product/brand/:brand" element={<AllProductPage />} />
         <Route path="/product/category/:category/brand/:brand" element={<AllProductPage />} />
-
 
         {/* Catch-all route for unmatched URLs */}
         <Route path="*" element={<Navigate to="/" replace />} />

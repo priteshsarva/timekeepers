@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import Slider from 'react-slick';
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
-import { brand, calculateDiscountedPrice, calculateSavingsPercentage } from '../data/data'
+import { brand, Brandphone, calculateDiscountedPrice, calculateSavingsPercentage } from '../data/data'
 import Card from '../components/Card';
 import VideoModal from '../components/VideoModal';
 
@@ -252,7 +252,7 @@ const ProductDetailPage = () => {
                                 {product.productName}
                             </h2>
                             <p className="text-gray-500 text-sm">
-                                By{' '}
+                                By{': '}
                                 <a href="#" className="text-[#1e2939] hover:underline font-medium">
                                     {brand}
                                 </a>
@@ -319,12 +319,12 @@ const ProductDetailPage = () => {
                                 <button
                                     onClick={() => {
                                         console.log(`Added ${quantity} item(s) to cart`);
-                                        const whatsappUrl = `https://api.whatsapp.com/send?phone=919586235982&text=${encodeURIComponent(
-                                            `📦 *Product*\n\n🛍️ Product: ${product.productName}\n💰 Price: ${product.productOriginalPrice}\n🔗 URL: ${window.location.href}`
+                                        const whatsappUrl = `https://api.whatsapp.com/send?phone=${Brandphone.replace(/\s+/g, '')}&text=${encodeURIComponent(
+                                            `📦 *Product*\n\n🛍️ Product: ${product.productName}\n💰 Price: ${calculateDiscountedPrice(product.productOriginalPrice)}\n🔗 URL: ${window.location.href}`
                                         )}`;
                                         window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
                                     }}
-                                    className="h-14 px-6 py-2 font-semibold rounded-xl bg-[#1e2939] hover:bg-[#2a3950] text-white transition-colors text-center"
+                                    className="h-14 px-6 py-2 font-semibold rounded-xl bg-[#1e2939] hover:bg-[#2a3950] text-white transition-colors text-center 2"
                                 >
                                     Buy via WhatsApp
                                 </button>

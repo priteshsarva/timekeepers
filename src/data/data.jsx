@@ -2,12 +2,12 @@ import manWearingWatch from '../assets/manholdingwatch.png'
 import womenholdingwatch1 from '../assets/womenholdingwatch1.png'
 import luxurywatches from '../assets/luxurywatches.png'
 
-export const brand = "Aqua Watch"
-export const BrandEmail = "aquawatch@gmail.com"
-export const Brandphone = "+91 95862 35982"
-export const BrandUrl = "aquawatch.com"
-export const msterCode = "vikash"
-export const joinUsOnWhatsapp = 'https://wa.me/919586235982'
+export const brand = "Time keepers"
+export const BrandEmail = "timekeepers.in@gmail.com"
+export const Brandphone = "+91 63519 55509"
+export const BrandUrl = "https://priteshsarva.github.io/timekeepers/"
+export const msterCode = "fkp"
+export const joinUsOnWhatsapp = 'https://wa.me/916351955509'
 
 
 export const sidebarDataCategory = [

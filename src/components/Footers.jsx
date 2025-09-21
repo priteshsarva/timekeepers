@@ -50,7 +50,7 @@ const Footers = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 mb-10">
 
           <div className="">
-            <Link className="flex-none font-semibold text-xl text-black focus:outline-hidden focus:opacity-80" to="/" aria-label="Brand">Aqua watch</Link>
+            <Link className="flex-none font-semibold text-xl text-black focus:outline-hidden focus:opacity-80" to="/" aria-label="Brand">{brand}</Link>
             <p><Link className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-hidden focus:text-gray-800 cursor-pointer mt-3" to={`mailto:${BrandEmail}`}>{BrandEmail}</Link></p>
             <p><Link className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-hidden focus:text-gray-800 mt-3" to={`tel:${Brandphone.replace(/\s+/g, '')}`}>{Brandphone}</Link></p>
             <p className="mt-3 text-xs sm:text-sm text-gray-600">
