@@ -7,7 +7,7 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { FaInstagram, FaFacebookSquare, FaWhatsapp } from 'react-icons/fa';
 import './Footer.css'
 import { Link } from 'react-router-dom';
-import { brand, BrandEmail, Brandphone } from '../data/data';
+import { brand, BrandEmail, Brandphone, directWhatsapp, facebookHandel, instagramHandel } from '../data/data';
 
 const Footers = () => {
   return (
@@ -50,7 +50,7 @@ const Footers = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 mb-10">
 
           <div className="">
-            <Link className="flex-none font-semibold text-xl text-black focus:outline-hidden focus:opacity-80" to="/" aria-label="Brand">Aqua watch</Link>
+            <Link className="flex-none font-semibold text-xl text-black focus:outline-hidden focus:opacity-80" to="/" aria-label="Brand">{brand}</Link>
             <p><Link className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-hidden focus:text-gray-800 cursor-pointer mt-3" to={`mailto:${BrandEmail}`}>{BrandEmail}</Link></p>
             <p><Link className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-hidden focus:text-gray-800 mt-3" to={`tel:${Brandphone.replace(/\s+/g, '')}`}>{Brandphone}</Link></p>
             <p className="mt-3 text-xs sm:text-sm text-gray-600">
@@ -89,9 +89,9 @@ const Footers = () => {
             <h4 className="text-xl font-semibold text-gray-900 ">Follow Us</h4>
 
             <div className="mt-3 flex gap-3 text-sm justify-items-center">
-              <Link to=""><FaInstagram className="text-2xl" /></Link>
-              <Link to=""><FaFacebookSquare className="text-2xl" /></Link>
-              <Link to=""><FaWhatsapp className="text-2xl" /></Link>
+              <Link to={instagramHandel}><FaInstagram className="text-2xl" /></Link>
+              <Link to={facebookHandel}><FaFacebookSquare className="text-2xl" /></Link>
+              <Link to={directWhatsapp}><FaWhatsapp className="text-2xl" /></Link>
             </div>
 
           </div>
