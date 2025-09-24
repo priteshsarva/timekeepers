@@ -252,7 +252,7 @@ const OriginalProductDetailPageWithprice = () => {
                                     {product.productName}
                                 </h2>
                                 <p className="text-gray-500 text-sm">
-                                    By{': '}
+                                    By{' '}
                                     <a href="#" className="text-[#1e2939] hover:underline font-medium">
                                         {brand}
                                     </a>

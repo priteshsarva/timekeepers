@@ -8,6 +8,7 @@ import ProductCategory from '../components/ProductCategory';
 import SingleCollection from '../components/SingleCollection';
 import ShopbyBrand from '../components/ShopbyBrand';
 import AquwawacthJoinFamily from '../assets/Aquwawacth-join-family.png';
+import ReadyToDispatch from '../components/ReadyToDispatch';
 import Loader from '../components/Loader';
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
@@ -16,9 +17,9 @@ const baseUrl = import.meta.env.VITE_BASE_URL;
 
 
 const Home = () => {
-  
     const [product, setproduct] = useState("")
     let urls = `${baseUrl}/product/firstdata`;
+
     useEffect(() => {
         if (product == '') {
             fetch(urls, {
@@ -26,7 +27,6 @@ const Home = () => {
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data.results);
                     setproduct(data.results);
                     // setSearchResults(data.results);
                 })
@@ -35,16 +35,12 @@ const Home = () => {
     }, [product])
 
 
-
-
-
     return (
-
-        <div>
+        <>
+            <Herosection />
             {product == "" ?
                 <Loader />
                 : <>
-                    <Herosection />
                     {/* <ShoeCarousel productss={products} /> */}
                     <ShopbyBrand />
                     <div className="relative w-full aspect-[3/1]">
@@ -83,18 +79,9 @@ const Home = () => {
 
                     <ProductCategory />
                     <SingleCollection products={product} />
-
-                    {product ? (
-                        <SingleCollection products={product} />
-                    ) : (<>
-                        <p>Loading product data...</p>
-                        {/* // This shows while waiting for product data */}
-                    </>
-
-                    )}
-
+                    <ReadyToDispatch />
                 </>}
-        </div>
+        </>
     )
 }
 

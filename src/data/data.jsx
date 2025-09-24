@@ -1,6 +1,8 @@
 import manWearingWatch from '../assets/manholdingwatch.png'
 import womenholdingwatch1 from '../assets/womenholdingwatch1.png'
 import luxurywatches from '../assets/luxurywatches.png'
+// import logo from '../assets/logo_1.png'
+import logo from '../assets/logo.png'
 
 export const brand = "Time keepers"
 export const BrandEmail = "priteshsarva.github.io/timekeepers/"
@@ -8,10 +10,10 @@ export const Brandphone = "+91 6351955509"
 export const BrandUrl = "aquawatch.com"
 export const msterCode = "fkp"
 export const joinUsOnWhatsapp = 'https://wa.me/916351955509'
+export const brandlogo = logo
 export const instagramHandel = 'https://www.instagram.com/'
 export const facebookHandel = 'https://www.facebook.com'
 export const directWhatsapp = 'https://wa.me/916351955509'
-
 
 export const sidebarDataCategory = [
   {
@@ -26,7 +28,7 @@ export const sidebarDataCategory = [
   },
 ];
 export const categorymap = {
-  "Women's Watches": "Womens watchs",
+  "Women's Watches": "womens watch",
   "Men's Watches": "mens watch",
 };
 
@@ -100,6 +102,27 @@ export const brandMap = {
   "Louis Vuitton": "Vuitton",
   Converse: "conver",
 };
+
+export const box = [
+  {
+    "productId": 324,
+    "productName": "rolex_Spidy Automatic",
+    "productDateCreation": "2025-07-31 17:53:47",
+    "productLastUpdated": 1753984427206,
+    "productPrice": null,
+    "productPriceWithoutDiscount": null,
+    "productOriginalPrice": 1300,
+    "productFetchedFrom": "https://watchhouse11.cartpe.in/",
+    "productUrl": "https://watchhouse11.cartpe.in/fossi-l-spidy-automatic-276964301-watchhouse11.html?color=",
+    "featuredimg": "https://cdn.cartpe.in/images/gallery_sm/68750292c60020.jpg",
+    "imageUrl": "[\"https://cdn.cartpe.in/images/gallery_md/68750292c60020.jpg\",\"https://cdn.cartpe.in/images/gallery_md/68750292c68831.jpg\",\"https://cdn.cartpe.in/images/gallery_md/68750292c6ed82.jpg\"]",
+    "videoUrl": null,
+    "productShortDescription": null,
+    "productDescription": null,
+    "productBrand": "Fossi_l Spidy",
+    "sizeName": "[\"\"]",
+    "catName": "Mens Watch"
+  },]
 
 
 export const products = [
@@ -6368,24 +6391,60 @@ export const toaddincutvalue = 2000;
 export const margin = 1000;
 
 //----------------------------price game---------------------------------
+// old
+// export function calculateAddedPrice(price) {
+//   const basePrice = price * 1.5;
+
+//   if (basePrice < 2000) {
+//     return (price * 1.3 + 500).toFixed(2);
+//   } else {
+//     return (price * 1.3).toFixed(2);
+//   }
+// }
+
+// export function calculateDiscountedPrice(price) {
+//   const basePrice = price * 1.2;
+
+//   if (basePrice < 2000) {
+//     return (price * 1.2 + 200).toFixed(2);
+//   } else {
+//     return (price * 1.2).toFixed(2);
+//   }
+// }
+
+export function calculateDiscountedPrice(price) {
+  const basePrice = price;
+
+
+  if (price > 0 && price <= 500) {
+    return (basePrice + 750).toFixed(2); // Add 750 if price > 0 and <= 500
+  }
+  else if (price > 500 && price <= 4500) {
+    return (basePrice + 1000).toFixed(2); // Add 1000 if price > 500 and <= 4500
+  }
+  else if (price > 4500 && price <= 6000) {
+    return (basePrice + 1250).toFixed(2); // Add 1250 if price > 4500 and <= 6000
+  }
+  else if (price > 6000) {
+    return (basePrice + 1500).toFixed(2); // Add 1500 if price > 6000
+  }
+
+}
 
 export function calculateAddedPrice(price) {
   const basePrice = price * 1.5;
 
-  if (basePrice < 2000) {
-    return (price * 1.3 + 500).toFixed(2);
-  } else {
-    return (price * 1.3).toFixed(2);
+   if (price > 0 && price <= 500) {
+    return (basePrice + 750).toFixed(2); // Add 750 if price > 0 and <= 500
   }
-}
-
-export function calculateDiscountedPrice(price) {
-  const basePrice = price * 1.2;
-
-  if (basePrice < 2000) {
-    return (price * 1.2 + 200).toFixed(2);
-  } else {
-    return (price * 1.2).toFixed(2);
+  else if (price > 500 && price <= 4500) {
+    return (basePrice + 1000).toFixed(2); // Add 1000 if price > 500 and <= 4500
+  }
+  else if (price > 4500 && price <= 6000) {
+    return (basePrice + 1250).toFixed(2); // Add 1250 if price > 4500 and <= 6000
+  }
+  else if (price > 6000) {
+    return (basePrice + 1500).toFixed(2); // Add 1500 if price > 6000
   }
 }
 

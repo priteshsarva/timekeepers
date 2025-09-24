@@ -7,7 +7,7 @@ import { watchBrand } from '../data/data';
 const ShopbyBrand = () => {
     return (
         <>
-            <section className=" mx-auto px-4 py-10 bg-white">
+            <section className=" mx-auto px-4 py-10 pt-0 bg-white">
                 {/* Title */}
                 <div className=' container mx-auto px-4 py-10 bg-white'>
                     <h4 className=" section-title section-title-center mb-5">
@@ -21,7 +21,7 @@ const ShopbyBrand = () => {
 
                 {/* Grid */}
                 <div className=" mx-auto px-4">
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 md:gap-9">
+                    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 md:gap-9">
                         {watchBrand.map((watch, index) => (
                             <Link
                                 key={index}
