@@ -10,6 +10,7 @@ import ShopbyBrand from '../components/ShopbyBrand';
 import AquwawacthJoinFamily from '../assets/Aquwawacth-join-family.png';
 import ReadyToDispatch from '../components/ReadyToDispatch';
 import Loader from '../components/Loader';
+import Testimonials from '../components/Testimonials';
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
@@ -41,8 +42,7 @@ const Home = () => {
             {product == "" ?
                 <Loader />
                 : <>
-                    {/* <ShoeCarousel productss={products} /> */}
-                    <ShopbyBrand />
+
                     <div className="relative w-full aspect-[3/1]">
                         <img
                             src={AquwawacthJoinFamily}
@@ -76,10 +76,13 @@ const Home = () => {
                             </Link>
                         </div>
                     </div>
-
+                    <ShopbyBrand />
                     <ProductCategory />
+                    <ShoeCarousel productss={product} />
+
                     <SingleCollection products={product} />
-                    <ReadyToDispatch />
+                    {/* <ReadyToDispatch /> */}
+                    <Testimonials />
                 </>}
         </>
     )
