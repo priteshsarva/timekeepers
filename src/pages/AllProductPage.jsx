@@ -7,16 +7,9 @@ const baseUrl1 = import.meta.env.VITE_BASE_URL;
 import Loader from "../components/Loader";
 
 
-// for brand
-// https://aquawatchserver.onrender.com/product/search?q=Adi 
-// for category
-// https://aquawatchserver.onrender.com/product/search?category=Mens%20Shoes&result=20&page=1
-// for page
-// https://aquawatchserver.onrender.com/product/search?category=Mens%20Shoes&&result=20&page=2
-
 
 const AllProductPage = () => {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
     const [url, setUrl] = useState("");
@@ -82,8 +75,12 @@ const AllProductPage = () => {
 
                 if (data.results && data.results.length > 0) {
                     if (currentPage === 1) {
+                        console.log("simple if conditon");
+
                         setProducts(data.results);
                     } else {
+                        console.log("else conditon");
+                        
                         setProducts((prev) => [...prev, ...data.results]);
                     }
                     setNoProductFound(false);
@@ -171,7 +168,7 @@ const AllProductPage = () => {
         <>
             {/* <BreadCrumbs selectedFilters sidebarDataBrand sidebarDataCategory/> */}
 
-            {products === 0 ? <Loader /> : <>
+            {products == '' ? <Loader /> : <>
                 <BreadCrumbs
                     selectedFilters={selectedFilters}
                     setSelectedFilters={setSelectedFilters}

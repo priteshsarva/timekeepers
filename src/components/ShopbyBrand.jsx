@@ -21,7 +21,7 @@ const ShopbyBrand = () => {
 
                 {/* Grid */}
                 <div className=" mx-auto px-4">
-                    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 md:gap-9">
+                    <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 md:gap-9 gap-4">
                         {watchBrand.map((watch, index) => (
                             <Link
                                 key={index}
@@ -40,7 +40,7 @@ const ShopbyBrand = () => {
                                 </div>
 
                                 {/* Text */}
-                                <h5 className="uppercase text-xs text-black">
+                                <h5 className="uppercase text-xs text-neutral-700">
                                     {watch.name}
                                 </h5>
                             </Link>

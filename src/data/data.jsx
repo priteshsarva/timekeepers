@@ -7,7 +7,7 @@ import logo from '../assets/logo.png'
 export const brand = "Time keepers"
 export const BrandEmail = "priteshsarva.github.io/timekeepers/"
 export const Brandphone = "+91 6351955509"
-export const BrandUrl = "aquawatch.com"
+export const BrandUrl = "timekeepers.com"
 export const msterCode = "fkp"
 export const joinUsOnWhatsapp = 'https://wa.me/916351955509'
 export const brandlogo = logo

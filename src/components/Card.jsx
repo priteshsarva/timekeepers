@@ -22,7 +22,7 @@ const Card = ({ title, price, coverImg, id, key, calculateAddedPriceHidden }) =>
                                 <p className="mr-2 text-sm text-gray-300 line-through">₹{calculateAddedPrice(price)}</p>
                                 : ""}
                             {/* <p className="mr-2 text-sm font-semibold text-gray-600">₹{Number(price) + Number(margin)}</p> */}
-                            <p className="mr-2 text-sm font-semibold text-gray-600"> ₹{calculateDiscountedPrice(price)}</p>
+                            <p className="mr-2 text-sm font-bold text-gray-600"> ₹{calculateDiscountedPrice(price)}</p>
 
                         </div>
                         {/* <div className="flex">
