@@ -147,7 +147,7 @@ export default function NavBarWithSubmenu() {
         <div className="fixed top-0 left-0 z-40 h-screen w-80 bg-white/80 backdrop-blur-lg shadow transition-transform animate-slide-right p-4 overflow-y-auto text-black">
           <div className="w-full sticky top-0 z-40   border-b border-gray-500 flex justify-between items-center mb-2 pb-3">
             <Link to='/' onClick={() => setLeftDrawerOpen(false)} className="text-base font-semibold text-gray-500 inline-flex items-center gap-2">
-              <img src={brandlogo} alt={brand} className="h-12 w-auto" />
+              <img src={brandlogo} alt={brand} className="h-15 w-auto" />
             </Link>
             <button
               onClick={() => setLeftDrawerOpen(false)}
@@ -187,7 +187,7 @@ export default function NavBarWithSubmenu() {
           {/* Center: Logo */}
           <div className="flex-1 flex justify-center ">
             <Link to="/#" className="inline-flex items-center">
-              <img src={brandlogo} alt={brand} className="h-12 w-auto" />
+              <img src={brandlogo} alt={brand} className="h-15 w-auto" />
             </Link>
           </div>
 
