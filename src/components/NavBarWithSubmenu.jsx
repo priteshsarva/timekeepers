@@ -16,17 +16,26 @@ export default function NavBarWithSubmenu() {
 
 
   const navLinks = [
-    { name: "Rolex", url: "product/brand/Rolex" },
-    { name: "Omega", url: "product/brand/omeg" },
-    { name: "Patek Philippe", url: "product/brand/patek" },
-    { name: "Cartier", url: "product/brand/cart" },
-    { name: "Audemars Piguet", url: "product/brand/audem" },
-    { name: "Breitling", url: "product/brand/breitling" },
-    { name: "TAG Heuer", url: "product/brand/tag" },
-    { name: "Tissot", url: "product/brand/tiss" },
-    { name: "Seiko", url: "product/brand/seik" },
-    { name: "Fossil", url: "product/brand/foss" },
-    { name: "Citize", url: "product/brand/citi" },
+    // { name: "Rolex", url: "product/brand/Rolex" },
+    // { name: "Omega", url: "product/brand/omeg" },
+    // { name: "Patek Philippe", url: "product/brand/patek" },
+    // { name: "Cartier", url: "product/brand/cart" },
+    // { name: "Audemars Piguet", url: "product/brand/audem" },
+    // { name: "Breitling", url: "product/brand/breitling" },
+    // { name: "TAG Heuer", url: "product/brand/tag" },
+    // { name: "Tissot", url: "product/brand/tiss" },
+    // { name: "Seiko", url: "product/brand/seik" },
+    // { name: "Fossil", url: "product/brand/foss" },   
+    // { name: "Citize", url: "product/brand/citi" },
+    { name: "Home", url: "/" },
+    { name: "Shop by Brands ", url: "/#shopByBrand" },
+    { name: "Men's Watches", url: "/product/category/Men's%20Watch" },
+    { name: "Women's Watches", url: "/product/category/Ladies Watch" },
+    { name: "Luxury collection", url: "/product/category/Luxury Watch Collection" },
+    { name: "Contact info", url: "#contactus" },
+
+
+
   ];
 
 

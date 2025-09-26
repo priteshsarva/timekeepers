@@ -35,6 +35,7 @@ const Home = () => {
         }
     }, [product])
 
+   
 
     return (
         <>
