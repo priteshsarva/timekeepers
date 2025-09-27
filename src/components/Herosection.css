@@ -14,7 +14,8 @@
   align-items: center;
 }
 .custom-height {
-  height: calc(100vh - 125px);
+    height: calc(100vh - 125px); /* Fallback for older browsers */
+  height: calc(100dvh - 125px);
 }
 @media (min-width: 768px) {
   .custom-height {

@@ -241,7 +241,9 @@ const ProductDetailPage = () => {
 
                                 </div>
 
-                                <div className=" items-center space-x-4 py-4 border-2 rounded-lg">
+                                
+                                {/* Buy with box option */}
+                             {/*    <div className=" items-center space-x-4 py-4 border-2 rounded-lg">
                                     <h2 className='text-center text-2xl font-semibold mb-4 text-[#1e2939]'>Buy with Box</h2>
                                     <div className="flex flex-wrap sm:flex-nowrap mx-2 mb-4 justify-center sm:justify-between items-center">
                                         <div className="sm:w-1/4 w-1/3 p-2">
@@ -275,7 +277,7 @@ const ProductDetailPage = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
 
 
                                 {/* Why Choose Us Section */}
