@@ -16,7 +16,7 @@ const Herosection = () => {
                     slidesPerView={1}
                     navigation
                     pagination={{ clickable: true }}
-                    className="w-full aspect-ratio-16-9"
+                    className=" w-full h-full aspect-[9/12] md:aspect-[16/9] "
                 >
                     <SwiperSlide className="relative w-full h-full">
                         <div
@@ -41,8 +41,11 @@ const Herosection = () => {
                             <p className="mt-4">This is the second slide description.</p>
                         </div>
                     </SwiperSlide> */}
+
                 </Swiper>
+
             </div>
+
         </>
     )
 }

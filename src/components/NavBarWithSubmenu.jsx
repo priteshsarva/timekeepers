@@ -226,7 +226,7 @@ export default function NavBarWithSubmenu() {
           </ul>
         </div>
       </nav>
-      <PromoBar />
+      {/* <PromoBar /> */}
     </>
   );
 }

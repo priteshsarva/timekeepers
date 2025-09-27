@@ -11,6 +11,7 @@ import AquwawacthJoinFamily from '../assets/Aquwawacth-join-family.png';
 import ReadyToDispatch from '../components/ReadyToDispatch';
 import Loader from '../components/Loader';
 import Testimonials from '../components/Testimonials';
+import PromoBar from '../components/PromoBar';
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
@@ -35,11 +36,12 @@ const Home = () => {
         }
     }, [product])
 
-   
+
 
     return (
         <>
             <Herosection />
+            <PromoBar />
             {product == "" ?
                 <Loader />
                 : <>
