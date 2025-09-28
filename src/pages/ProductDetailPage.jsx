@@ -3,10 +3,19 @@ import { useParams } from 'react-router-dom';
 import Slider from 'react-slick';
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
-import { box, brand, calculateAddedPrice, calculateDiscountedPrice, calculateSavingsPercentage } from '../data/data'
+import { box, brand, Brandphone, calculateAddedPrice, calculateDiscountedPrice, calculateSavingsPercentage } from '../data/data'
 import Card from '../components/Card';
 import VideoModal from '../components/VideoModal';
 import Loader from '../components/Loader';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeadset, faMoneyBillWave, faCheckCircle, faUndo } from '@fortawesome/free-solid-svg-icons';
+import {
+    ComputerDesktopIcon,
+    PhoneArrowUpRightIcon,
+    VideoCameraIcon,
+    CubeIcon,
+} from "@heroicons/react/24/solid";
+
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
@@ -35,6 +44,13 @@ const ProductDetailPage = () => {
             setQuantity(prev => prev - 1);
         }
     };
+
+    const steps = [
+        { title: "ORDER NOW", Icon: ComputerDesktopIcon },
+        { title: "OUR SALES TEAM CALL YOU", Icon: PhoneArrowUpRightIcon },
+        { title: "VIDEO CALL FACILITY", Icon: VideoCameraIcon },
+        { title: "DELIVERY", Icon: CubeIcon },
+    ];
 
 
     const settings = {
@@ -178,31 +194,37 @@ const ProductDetailPage = () => {
                             </div>
 
                             <div className="md:flex-1 px-4">
-                                <h2 className="mb-2 leading-tight tracking-tight font-bold text-[#1e2939] text-2xl md:text-3xl">
+                                <h2 className="mb-2 leading-tight tracking-tight font-bold text-black text-2xl md:text-3xl">
                                     {product.productName}
                                 </h2>
                                 <p className="text-gray-500 text-sm">
                                     By{' '}
-                                    <a href="#" className="text-[#1e2939] hover:underline font-medium">
+                                    <a href="#" className="text-black hover:underline font-medium">
                                         {brand}
                                     </a>
                                 </p>
 
                                 <div className="flex items-center space-x-4 my-4">
                                     <div>
-                                        <div className="rounded-lg bg-gray-100 flex py-2 px-3">
-                                            <span className="text-[#1e2939] mr-1 mt-1">₹</span>
-                                            <span className="font-bold text-[#1e2939] text-3xl">
-                                                {calculateDiscountedPrice(product.productOriginalPrice)}
+                                        <div className="flex py-2 pe-3">
+                                            <span className="text-gray-300 mr-1 mt-1">₹</span>
+                                            <span className="font-semibold text-gray-300 text-3xl line-through pe-3">
+                                                {parseInt(calculateAddedPrice(product.productOriginalPrice))}
+                                            </span>
+
+                                            <span className="text-black mr-1 mt-1">₹</span>
+                                            <span className="font-semibold text-black text-4xl">
+                                                {parseInt(calculateDiscountedPrice(product.productOriginalPrice))}
                                             </span>
                                         </div>
                                     </div>
-                                    <div className="flex-1">
-                                        
+
+                                    {/* <div className="flex-1">
                                         <p className="text-green-500 text-xl font-semibold">
                                             <span className="mr-2 text-sm text-gray-300 line-through">₹{calculateAddedPrice(product.productOriginalPrice)}</span> {calculateSavingsPercentage(product.productOriginalPrice)}%</p>
                                         <p className="text-gray-400 text-sm">Inclusive of all Taxes.</p>
-                                    </div>
+                                    </div> */}
+
                                 </div>
 
                                 <div className="flex items-center space-x-4 py-4">
@@ -212,7 +234,7 @@ const ProductDetailPage = () => {
                                         <>
                                             <button
                                                 onClick={openModal}
-                                                className="h-14 px-6 py-2 font-semibold rounded-xl bg-[#1e2939] hover:bg-[#2a3950] text-white transition-colors"
+                                                className="h-14 px-6 py-2 font-semibold rounded-xl bg-black hover:bg-neutral-800 text-white transition-colors"
                                             >
                                                 Live Video
                                             </button>
@@ -229,22 +251,91 @@ const ProductDetailPage = () => {
                                     <button
                                         onClick={() => {
                                             console.log(`Added ${quantity} item(s) to cart`);
-                                            const whatsappUrl = `https://api.whatsapp.com/send?phone=919586235982&text=${encodeURIComponent(
-                                                `📦 *Product*\n\n🛍️ Product: ${product.productName}\n💰 Price: ${calculateDiscountedPrice(product.productOriginalPrice)}\n🔗 URL: ${window.location.href}`
+                                            const whatsappUrl = `https://api.whatsapp.com/send?phone=${Brandphone}&text=${encodeURIComponent(
+                                                `📦 *Product Details*\n\n` +
+                                                `🛍️ *Product*: ${product.productName}\n` +
+                                                `💰 *Price*: ~₹${parseInt(
+                                                    calculateAddedPrice(product.productOriginalPrice)
+                                                )}~ → *₹${parseInt(
+                                                    calculateDiscountedPrice(product.productOriginalPrice)
+                                                )}*\n` +
+                                                `🔗 *URL*: ${window.location.href}`
                                             )}`;
                                             window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
                                         }}
-                                        className="h-14 px-6 py-2 font-semibold rounded-xl bg-[#1e2939] hover:bg-[#2a3950] text-white transition-colors text-center"
+                                        className="h-14 px-6 py-2 font-semibold rounded-xl bg-black hover:bg-neutral-800 text-white transition-colors text-center"
                                     >
                                         Buy via WhatsApp
                                     </button>
 
                                 </div>
 
-                                
+                                <div className="flex items-center space-x-4 my-4 gap-2">
+                                    <div className="feature-card">
+                                        <FontAwesomeIcon icon={faHeadset} className='mb-2 feature-icon' />
+                                        <div className="font-bold text-neutral-950">Brand Support</div>
+                                    </div>
+
+                                    <div className="feature-card">
+                                        <FontAwesomeIcon icon={faUndo} className='mb-2 feature-icon' />
+                                        <div className="font-bold text-neutral-950">7-Day Return</div>
+                                    </div>
+
+                                    {/* <div className="feature-card">
+                                        <FontAwesomeIcon icon={faMoneyBillWave} className='mb-2 feature-icon' />
+                                        <div className="font-bold text-neutral-950 ">Cash on Delivery</div>
+                                    </div> */}
+
+                                    {/* <div className="feature-card">
+                                        <FontAwesomeIcon icon={faCheckCircle} className='mb-2 feature-icon' />
+                                        <div className="font-bold text-neutral-950">Assured Quality</div>
+                                    </div> */}
+                                </div>
+
+                                <div className="flex flex-col items-center p-6 bg-purple-100 rounded-xl max-w-3xl mx-auto">
+                                    <h2 className="text-xl font-bold text-purple-900 mb-6">STEP BY STEP</h2>
+
+                                    <div className="flex flex-col md:flex-row items-center md:justify-between w-full gap-6">
+                                        {steps.map((step, idx) => (
+                                            <div key={idx} className="flex flex-col items-center text-center relative">
+                                                <step.Icon className="w-14 h-14 text-purple-700 mb-2" />
+                                                <p className="text-sm font-semibold text-purple-800">{step.title}</p>
+                                                {idx !== steps.length - 1 && (
+                                                    <span className="hidden md:block absolute right-[-32px] top-6 text-purple-600 text-2xl">
+                                                        →
+                                                    </span>
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    <div className="mt-6 w-full">
+                                        <button
+                                            onClick={() => {
+                                                console.log(`User is interested in ${product.productName}`);
+
+                                                const whatsappUrl = `https://api.whatsapp.com/send?phone=${Brandphone}&text=${encodeURIComponent(
+                                                    `👋 Hello,\n\nI'm interested in moving forward through the *Step by Step* process on your site.\n\n🛍️ *Product*: ${product.productName}\n💰 *Price*: ~₹${parseInt(
+                                                        calculateAddedPrice(product.productOriginalPrice)
+                                                    )}~ → *₹${parseInt(
+                                                        calculateDiscountedPrice(product.productOriginalPrice)
+                                                    )}*\n🔗 *Product Link*: ${window.location.href}\n\nCan you please guide me with the next steps?`
+                                                )}`;
+
+                                                window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+                                            }}
+                                            className="bg-purple-400 text-white rounded-full py-3 px-6 text-center font-medium shadow-md cursor-pointer w-full"
+                                        >
+                                            💬 Chat with Support: {Brandphone}
+                                        </button>
+
+
+                                    </div>
+                                </div>
+
                                 {/* Buy with box option */}
-                             {/*    <div className=" items-center space-x-4 py-4 border-2 rounded-lg">
-                                    <h2 className='text-center text-2xl font-semibold mb-4 text-[#1e2939]'>Buy with Box</h2>
+                                {/*    <div className=" items-center space-x-4 py-4 border-2 rounded-lg">
+                                    <h2 className='text-center text-2xl font-semibold mb-4 text-black'>Buy with Box</h2>
                                     <div className="flex flex-wrap sm:flex-nowrap mx-2 mb-4 justify-center sm:justify-between items-center">
                                         <div className="sm:w-1/4 w-1/3 p-2">
                                             <Card
@@ -270,8 +361,8 @@ const ProductDetailPage = () => {
                                         <h2 className='text-center font-semibold text-3xl hidden sm:block mt-[-36px]  sm:mt-0'>=</h2>
                                         <div className="p-2">
                                             <div className="rounded-lg bg-gray-100 flex py-2 px-3">
-                                                <span className="text-[#1e2939] mr-1 mt-1">₹</span>
-                                                <span className="font-bold text-[#1e2939] text-2xl">
+                                                <span className="text-black mr-1 mt-1">₹</span>
+                                                <span className="font-bold text-black text-2xl">
                                                     {calculateDiscountedPrice(product.productOriginalPrice)}
                                                 </span>
                                             </div>
@@ -282,11 +373,11 @@ const ProductDetailPage = () => {
 
                                 {/* Why Choose Us Section */}
                                 <div className="mt-10">
-                                    <h2 className="text-2xl font-semibold mb-4 text-[#1e2939]">
+                                    <h2 className="text-2xl font-semibold mb-4 text-black">
                                         Why Choose Us?
                                     </h2>
 
-                                    <ul className="list-disc list-inside space-y-2 text-[#1e2939]">
+                                    <ul className="list-disc list-inside space-y-2 text-black">
                                         <li>Authentic Timepieces Only – No Replicas or Fakes</li>
                                         <li>Comes with Original Branded Watch Box</li>
                                         <li>Sourced Directly from Trusted Distributors</li>
@@ -295,7 +386,7 @@ const ProductDetailPage = () => {
                                         <li>Fast & Secure Shipping Across India</li>
                                     </ul>
 
-                                    <div className="mt-6 text-[#1e2939]">
+                                    <div className="mt-6 text-black">
                                         <p className="font-bold">Trust the Name – {brand}</p>
                                         <p>- Where precision meets prestige</p>
                                         <p>
@@ -304,7 +395,7 @@ const ProductDetailPage = () => {
                                         </p>
                                     </div>
 
-                                    <div className="mt-4 text-[#1e2939]">
+                                    <div className="mt-4 text-black">
                                         <p>- Want to see it before you buy?</p>
                                         <p>
                                             - Live videos available on <span className="font-medium">WhatsApp</span>.
@@ -319,7 +410,7 @@ const ProductDetailPage = () => {
 
                     {/* Similar Products */}
                     <div className="mt-5 max-w-7xl mx-auto pt-10 px-4">
-                        <h2 className="text-2xl font-semibold mb-4 text-[#1e2939]">Similar Products</h2>
+                        <h2 className="text-2xl font-semibold mb-4 text-black">Similar Products</h2>
 
                         {simillarproducts && simillarproducts.length > 0 ? (
                             <Slider {...settings}>

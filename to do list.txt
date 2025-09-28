@@ -1,9 +1,19 @@
 
-4. shop by brand me grid changs (ss)                                                                                                                            need to talk
-5. wishlist list                                                                                                                                                Later om
-6. footer ke upper jo options hs usko kicks mania jese kardo kicksmania                                                                                         is near to like 
-7. announcement bar                                                                                                                                             need to talk
-8. Return replace etc policy add karna he                                                                                                                       alredy there
+4. shop by brand me grid changs (ss) --need to talk
+5. wishlist list --Later om
+6. footer ke upper jo options hs usko kicks mania jese kardo kicksmania --is near to like 
+7. announcement bar --need to talk
+8. Return replace etc policy add karna he --alredy there
+
+[  ] product page
+4. product ki niche description buttons like product description return policy(ss) --Skip it for now cause need deatils for this
+5. changes in description --Skip it for now cause need deatils for this
+6. product page per popup (ss) --Skip it for now
+7. inquiry on WhatsApp buttons --need info
+
+
+
+
 
 
 1. banner ratio 9:16										                                                                									Done
@@ -26,14 +36,8 @@
 2. filter options ko side kardo or category me search options add kardo                                                                                         Done
 
 
-[  ] product page
-1. Pricing font change
-2. buy now ke niche 7 day return etc buttons (ss)
-3. product page per video call service ka button (ss)
-4. product ki niche description buttons like product description return policy(ss)
-5. changes in description 
-6. product page per popup (ss)
-7. inquiry on WhatsApp buttons
+1. Pricing font change                                                                                                                                          Done
+2. buy now ke niche 7 day return etc buttons (ss)                                                                                                               Done
+3. product page per video call service ka button (ss)                                                                                                           Done
 
-
-check out page per product ke niche og box kita ka ek options dena he
+check out page per product ke niche original box kita ka ek options dena he
