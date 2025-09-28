@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import BreadCrumbs from "../components/BreadCrumbs";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate, Link, useLocation } from "react-router-dom";
 import Card from "../components/Card";
 import { brandMap, categorymap, sidebarDataBrand, sidebarDataCategory } from "../data/data";
 const baseUrl1 = import.meta.env.VITE_BASE_URL;
@@ -16,6 +16,7 @@ const AllProductPage = () => {
     const [noProductFound, setNoProductFound] = useState(false);
     const { category, brand } = useParams();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [selectedFilters, setSelectedFilters] = useState({
         category: "",
@@ -64,9 +65,10 @@ const AllProductPage = () => {
         return baseUrl + params.join("&");
     };
 
-    useEffect(() => {
-        const fetchProducts = async () => {
-            const apiUrl = buildUrl(selectedFilters, currentPage);
+    const fetchProducts = async () => {
+        let apiUrl
+        if (selectedFilters.category || selectedFilters.brand) {
+            apiUrl = buildUrl(selectedFilters, currentPage);
             setUrl(apiUrl);
 
             try {
@@ -75,12 +77,8 @@ const AllProductPage = () => {
 
                 if (data.results && data.results.length > 0) {
                     if (currentPage === 1) {
-                        console.log("simple if conditon");
-
                         setProducts(data.results);
                     } else {
-                        console.log("else conditon");
-                        
                         setProducts((prev) => [...prev, ...data.results]);
                     }
                     setNoProductFound(false);
@@ -94,7 +92,36 @@ const AllProductPage = () => {
             } catch (error) {
                 console.error("Error fetching products:", error);
             }
-        };
+        } else if (location.pathname === '/product') {
+            apiUrl = buildUrl(selectedFilters, currentPage);
+            setUrl(apiUrl);
+
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                if (data.results && data.results.length > 0) {
+                    if (currentPage === 1) {
+                        setProducts(data.results);
+                    } else {
+                        setProducts((prev) => [...prev, ...data.results]);
+                    }
+                    setNoProductFound(false);
+                    setTotalPages(data.totalPages);
+                } else {
+                    if (currentPage === 1) {
+                        setProducts([]);
+                        setNoProductFound(true);
+                    }
+                }
+            } catch (error) {
+                console.error("Error fetching products:", error);
+            }
+        }
+
+    };
+
+    useEffect(() => {
 
         fetchProducts();
     }, [selectedFilters, currentPage]);
@@ -175,7 +202,7 @@ const AllProductPage = () => {
                     sidebarDataBrand={sidebarDataBrand}
                     sidebarDataCategory={sidebarDataCategory}
                     handleFilterChange={handleFilterChange}
-                    setCurrentPage={setCurrentPage} 
+                    setCurrentPage={setCurrentPage}
                 />
 
                 <section className="container mx-auto grid grid-cols-12 gap-4">

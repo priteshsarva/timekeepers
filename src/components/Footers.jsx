@@ -122,7 +122,6 @@ const Footers = () => {
         {/* End Grid */}
 
       </footer>
-
       {/* ========== END FOOTER ========== */}
     </>
   )

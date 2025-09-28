@@ -44,16 +44,21 @@ export default function NavBarWithSubmenu() {
     setSearchTerm(term);
 
     console.log(term);
-    let urls = `${baseUrl}/product/search?q=${term}`;
-    fetch(urls, {
-      method: 'GET',
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data.results);
-        setSearchResults(data.results);
+    
+    if (term.trim().length >= 3) {
+      let urls = `${baseUrl}/product/search?q=${term}`;
+      fetch(urls, {
+        method: 'GET',
       })
-      .catch(error => console.error('Error:', error));
+        .then(response => response.json())
+        .then(data => {
+          console.log(data.results);
+          setSearchResults(data.results);
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+
   };
 
   const handleCloseSearch = () => {
@@ -96,7 +101,7 @@ export default function NavBarWithSubmenu() {
             />
           </div>
           <div className="text-sm text-gray-500">
-            {searchTerm.trim() === '' ? (
+            {searchTerm.trim().length <= 2 ? (
               <p className="text-center mt-4">Please enter a search term to see results.</p>
             ) : (
               <>

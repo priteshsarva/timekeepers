@@ -28,7 +28,7 @@ export const sidebarDataCategory = [
   },
 ];
 export const categorymap = {
-  "Women's Watches": "womens watch",
+  "Women's Watches": "Ladies Watch",
   "Men's Watches": "mens watch",
 };
 
