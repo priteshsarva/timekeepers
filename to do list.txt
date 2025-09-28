@@ -29,7 +29,7 @@
 [  ] track order                                                                                                                                                done
 [  ] Replace                                                                                                                                                    done
 [  ] my account                                                                                                                                                 done
-[  ] Contact info                                                                                                                                               done
+[  ] Contact info                                                                                                                                                done
 
 
 1. Pricing bold kardo                                                                                                                                           Done
