@@ -29,15 +29,13 @@ export default function NavBarWithSubmenu() {
     // { name: "Fossil", url: "product/brand/foss" },   
     // { name: "Citize", url: "product/brand/citi" },
     { name: "Home", url: "/" },
-    { name: "Shop by Brands ", url: "/#shopByBrand" },
+    { name: "Shop by Brands ", url: "/home#shopByBrand" },
     { name: "Men's Watches", url: "/product/category/Men's%20Watch" },
     { name: "Women's Watches", url: "/product/category/Ladies Watch" },
     { name: "Luxury collection", url: "/product/category/Luxury Watch Collection" },
     { name: "Contact info", url: "#contactus" },
-
-
-
   ];
+
 
 
   const handleSearch = (e) => {
@@ -178,6 +176,7 @@ export default function NavBarWithSubmenu() {
               <li key={index}>
                 <Link
                   to={link.url}
+                  onClick={() => setLeftDrawerOpen(false)}
                   className="block px-4 py-2 rounded-md hover:bg-gray-200 transition-colors duration-200 cursor-pointer"
                 >
                   {link.name}
@@ -232,8 +231,9 @@ export default function NavBarWithSubmenu() {
             ))}
           </ul>
         </div>
+        <PromoBar />
       </nav>
-      {/* <PromoBar /> */}
+
     </>
   );
 }

@@ -10,11 +10,18 @@
   .marquee {
     display: inline-block;
     white-space: nowrap;
-    animation: marquee 20s linear infinite;
+    animation: marquee 15s linear infinite;
     width: 100%;
   }
+
   
   .marquee:hover {
     animation-play-state: paused;
   }
   
+  @media (min-width: 768px) {
+  .marquee {
+       animation: marquee 20s linear infinite;
+
+  }
+}

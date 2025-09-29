@@ -45,7 +45,9 @@ export default function ShoeCarousel({ productss }) {
     slidesToScroll: 1,
     arrows: true,
     swipeToSlide: true,
-
+    // 👇 Add autoplay
+    autoplay: true,
+    autoplaySpeed: 2000, // change speed (ms) to your needs
     // lazyLoad: true,
 
     className: "slider variable-width",
@@ -99,7 +101,7 @@ export default function ShoeCarousel({ productss }) {
                 price={product.productOriginalPrice}
                 coverImg={product.featuredimg}
                 id={product.productId}
-             
+                catName={product.catName}
               />
             </div>
           </div>

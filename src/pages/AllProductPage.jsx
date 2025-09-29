@@ -295,6 +295,7 @@ const AllProductPage = () => {
                                         price={product.productOriginalPrice}
                                         coverImg={product.featuredimg}
                                         id={product.productId}
+                                        catName={product.catName}
                                     />
                                 </div>
                             ))}
@@ -302,7 +303,7 @@ const AllProductPage = () => {
                         </div>
                         <div className='w-full flex justify-center'>
                             {currentPage < totalPages && (
-                                <div className="mt-6 inline-flex items-center justify-center text-gray-800 font-semibold px-4 py-2 border border-gray-300 hover:border-black transition rounded-none cursor-pointer" onClick={handleLoadMore}>Load more products...</div>
+                                <div className="mt-6 inline-flex items-center justify-center bg-gray-900 text-white font-semibold px-4 py-2 border hover:bg-gray-700 transition rounded-none cursor-pointer" onClick={handleLoadMore}>View More Products</div>
                             )}
                         </div>
                     </div>

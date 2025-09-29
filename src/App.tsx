@@ -19,6 +19,7 @@ import AllProductPage from './pages/AllProductPage.jsx';
 import NavBarWithSubmenu from './components/NavBarWithSubmenu.jsx';
 import Footers from './components/Footers.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx';
+// import ScrollToHashElement from './components/ScrollToHashElement.jsx';
 import {msterCode } from './data/data.jsx'
 
 
@@ -47,6 +48,7 @@ const App = () => {
   return (
     <>
       <NavBarWithSubmenu />
+      {/* <ScrollToHashElement /> */}
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />

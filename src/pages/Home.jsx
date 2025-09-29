@@ -41,12 +41,11 @@ const Home = () => {
     return (
         <>
             <Herosection />
-            <PromoBar />
+            {/* <PromoBar /> */}
             {product == "" ?
                 <Loader />
                 : <>
-
-                    <div className="relative w-full aspect-[3/1]">
+                    {/* <div className="relative w-full aspect-[3/1]">
                         <img
                             src={AquwawacthJoinFamily}
                             alt="Join Us"
@@ -60,26 +59,11 @@ const Home = () => {
                             >
                                 <h6 className="flex items-center gap-2 text-base font-semibold">
                                     Join Us on Whatsapp
-                                    {/* <svg
-                                        viewBox="0 0 14 10"
-                                        fill="none"
-                                        aria-hidden="true"
-                                        focusable="false"
-                                        className="w-4 h-4"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            fillRule="evenodd"
-                                            clipRule="evenodd"
-                                            d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
-                                            fill="currentColor"
-                                        ></path>
-                                    </svg> */}
                                 </h6>
                             </Link>
                         </div>
-                    </div>
-                    <ShopbyBrand />
+                    </div> */}
+                    <ShopbyBrand /> 
                     <ProductCategory />
                     <ShoeCarousel productss={product} />
 

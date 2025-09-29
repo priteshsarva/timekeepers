@@ -6289,17 +6289,17 @@ export const category = [
   {
     title: "Men's Watches",
     img: manWearingWatch,
-    link: "/product/category/mens-watch/",
+    link: "/product/category/men's watch/",
   },
   {
     title: "Womens Watches",
     img: womenholdingwatch1,
-    link: "/product/category/womens-watch/",
+    link: "/product/category/Ladies Watch/",
   },
-  {
+  { 
     title: "Luxury Watches",
     img: luxurywatches,
-    link: "/product/category/Luxury/",
+    link: "/product/category/luxury watch/",
   },
 
 ];

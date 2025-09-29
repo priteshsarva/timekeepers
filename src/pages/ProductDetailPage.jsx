@@ -204,29 +204,31 @@ const ProductDetailPage = () => {
                                     </a>
                                 </p>
 
-                                <div className="flex items-center space-x-4 my-4">
-                                    <div>
-                                        <div className="flex py-2 pe-3">
-                                            <span className="text-gray-300 mr-1 mt-1">₹</span>
-                                            <span className="font-semibold text-gray-300 text-3xl line-through pe-3">
-                                                {parseInt(calculateAddedPrice(product.productOriginalPrice))}
-                                            </span>
 
-                                            <span className="text-black mr-1 mt-1">₹</span>
-                                            <span className="font-semibold text-black text-4xl">
-                                                {parseInt(calculateDiscountedPrice(product.productOriginalPrice))}
-                                            </span>
+                                {catName !== "luxury watch" &&
+                                    <div className="flex items-center space-x-4 my-4">
+                                        <div>
+                                            <div className="flex py-2 pe-3">
+                                                <span className="text-gray-300 mr-1 mt-1">₹</span>
+                                                <span className="font-semibold text-gray-300 text-3xl line-through pe-3">
+                                                    {parseInt(calculateAddedPrice(product.productOriginalPrice))}
+                                                </span>
+
+                                                <span className="text-black mr-1 mt-1">₹</span>
+                                                <span className="font-semibold text-black text-4xl">
+                                                    {parseInt(calculateDiscountedPrice(product.productOriginalPrice))}
+                                                </span>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    {/* <div className="flex-1">
+                                        {/* <div className="flex-1">
                                         <p className="text-green-500 text-xl font-semibold">
                                             <span className="mr-2 text-sm text-gray-300 line-through">₹{calculateAddedPrice(product.productOriginalPrice)}</span> {calculateSavingsPercentage(product.productOriginalPrice)}%</p>
                                         <p className="text-gray-400 text-sm">Inclusive of all Taxes.</p>
                                     </div> */}
 
-                                </div>
-
+                                    </div>
+                                }
                                 <div className="flex items-center space-x-4 py-4">
 
                                     {/* Add to Cart Button */}
