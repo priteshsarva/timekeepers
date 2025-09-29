@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Card from './Card'
 import PromoBar from './PromoBar';
 import { brand, brandlogo } from '../data/data';
+import AnnouncementBar from './AnnouncementBar';
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
 export default function NavBarWithSubmenu() {
@@ -44,7 +45,7 @@ export default function NavBarWithSubmenu() {
     setSearchTerm(term);
 
     console.log(term);
-    
+
     if (term.trim().length >= 3) {
       let urls = `${baseUrl}/product/search?q=${term}`;
       fetch(urls, {
@@ -189,6 +190,7 @@ export default function NavBarWithSubmenu() {
 
       {/* 🌐 Navbar */}
       <nav className="sticky top-0 z-30 bg-white/70 backdrop-blur-md border-b border-gray-200">
+        <AnnouncementBar />
         <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
           {/* Left: Hamburger (mobile only) */}
           <button

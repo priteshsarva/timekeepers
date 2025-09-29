@@ -3,6 +3,7 @@ import womenholdingwatch1 from '../assets/womenholdingwatch1.png'
 import luxurywatches from '../assets/luxurywatches.png'
 // import logo from '../assets/logo_1.png'
 import logo from '../assets/logo.png'
+import AnnouncementBar from '../components/AnnouncementBar'
 
 export const brand = "Time keepers"
 export const BrandEmail = "priteshsarva.github.io/timekeepers/"
@@ -6385,6 +6386,18 @@ export const watchBrand = [
   }
 ];
 
+
+export const announcements = [
+  {
+    loop: 10,
+    msg: (
+      <span className="mx-20">
+        MONSOON SALE : PAY ONLINE WITH UPI AND GET 20% OFF — USE CODE{" "}
+        <span className="font-bold">"UPI20"</span> AT CHECKOUT.
+      </span>
+    )
+  }
+];
 
 
 export const toaddincutvalue = 2000;
