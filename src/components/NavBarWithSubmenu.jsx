@@ -32,7 +32,7 @@ export default function NavBarWithSubmenu() {
     { name: "Shop by Brands ", url: "/home#shopByBrand" },
     { name: "Men's Watches", url: "/product/category/Men's%20Watch" },
     { name: "Women's Watches", url: "/product/category/Ladies Watch" },
-    { name: "Luxury collection", url: "/product/category/Luxury Watch Collection" },
+    { name: "Luxury collection", url: "/product/category/Luxury Watch" },
     { name: "Contact info", url: "#contactus" },
   ];
 

@@ -6300,8 +6300,7 @@ export const category = [
     title: "Luxury Watches",
     img: luxurywatches,
     link: "/product/category/luxury watch/",
-  },
-
+  },                    
 ];
 
 
