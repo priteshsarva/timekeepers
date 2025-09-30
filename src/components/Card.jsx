@@ -17,7 +17,7 @@ const Card = ({ title, price, coverImg, id, key, calculateAddedPriceHidden, catN
                     <div className="px-4 py-3 bg-white">
                         <Link to={`/productpage/${id}`} className=""><h1 className="text-center text-gray-800 font-medium text-sm hover:text-black transition duration-300 ease-in-out line-clamp-2">{title}</h1></Link>
 
-                        {catName !== "luxury watch" &&
+                        {catName !== "Luxury Watch" &&
                             <div className="flex py-2 justify-center">
                                 {/* <p className="mr-2 text-sm text-gray-300 line-through">₹{Number(price) + Number(toaddincutvalue)}</p> */}
                                 {!calculateAddedPriceHidden ?

@@ -16,6 +16,10 @@ export const instagramHandel = 'https://www.instagram.com/'
 export const facebookHandel = 'https://www.facebook.com'
 export const directWhatsapp = 'https://wa.me/916351955509'
 
+import citizen from '../assets/citizen.webp'
+import tommyHilfiger from '../assets/tommyHilfiger.webp'
+import michael from '../assets/michael.webp'
+
 export const sidebarDataCategory = [
   {
     id: "mensWatches",
@@ -6296,11 +6300,11 @@ export const category = [
     img: womenholdingwatch1,
     link: "/product/category/Ladies Watch/",
   },
-  { 
+  {
     title: "Luxury Watches",
     img: luxurywatches,
     link: "/product/category/luxury watch/",
-  },                    
+  },
 ];
 
 
@@ -6327,6 +6331,24 @@ export const watchBrand = [
     name: "G-shock",
     url: "/product/brand/g-shock/",
     image: "https://crepculture.com/wp-content/uploads/2024/10/g1277.webp",
+    count: 32
+  },
+  {
+    name: "Tommy Hilfiger",
+    url: "/product/brand/Tommy/",
+    image: tommyHilfiger,
+    count: 32
+  },
+  {
+    name: "Citizen",
+    url: "/product/brand/Citiz/",
+    image: citizen,
+    count: 32
+  },
+  {
+    name: "Michael Kors",
+    url: "/product/brand/Michael/",
+    image: michael,
     count: 32
   },
   {

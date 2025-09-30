@@ -15,7 +15,7 @@ import {
     VideoCameraIcon,
     CubeIcon,
 } from "@heroicons/react/24/solid";
-
+import { Truck, Recycle, Tag } from "lucide-react";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
@@ -32,12 +32,71 @@ const ProductDetailPage = () => {
     const closeModal = () => setShowModal(false);
     const videoUrl = "https://www.w3schools.com/html/mov_bbb.mp4"; // Replace with your video URL
     const [quantity, setQuantity] = useState(1);
+    const [openIndex, setOpenIndex] = useState(null);
 
+    const toggle = (index) => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
     const increaseQty = () => {
         if (quantity < 9) {
             setQuantity(prev => prev + 1);
         }
     };
+
+    const accordions = [
+        {
+            question: "How PRODUCT DESCRIPTION",
+            answer: (
+                <div className="space-y-2 text-gray-700 text-base leading-relaxed">
+                    <p>This Product is the <span className="font-semibold">Same as Original Quality Master Copy</span> with <span className="font-semibold">3 month Machine Replacement Warranty</span>.</p>
+                    <p><span className=" font-bold">If you want the original box kit, extra charges apply!</span></p>
+                    <p>Cash on Delivery available all over India.</p>
+                    <p>All Chrono working.</p>
+                    <p>Approximate delivery time: <span className="italic">4-6 days</span>.</p>
+                </div>
+            )
+        },
+        {
+            question: "BOX POLICY",
+            answer: (
+                <div className="space-y-3 text-gray-700 text-base leading-relaxed">
+                    <p>
+                        <strong>Standard packaging:</strong> Every watch is shipped in a secure, high-quality protective box suitable for safe delivery. This is included with every order at <span className="font-semibold">no extra cost</span>.
+                    </p>
+                    <p>
+                        <strong>Original / Brand box:</strong> Extra charges apply if an original or brand box is available for your selected watch. The extra fee will be shown at checkout. If the charge can't be displayed automatically, our team will confirm the box option and additional charges before shipping.
+                    </p>
+                </div>
+            ),
+        },
+        {
+            question: "RETURN POLICY",
+            answer: (
+                <div className="space-y-3 text-gray-700 text-base leading-relaxed">
+                    <p><strong>Exchange & Store Credit Policy</strong></p>
+                    <p>At <em>Timekeepers</em>, we do not offer cash refunds. Instead, we provide easy exchange and store credit options to ensure customer satisfaction.</p>
+                    <p>
+                        <strong>Exchange Window:</strong> You may request an exchange within <strong>48 hours of delivery</strong> by contacting our support team.
+                    </p>
+                    <p><strong>Conditions:</strong></p>
+                    <ol className="list-decimal list-inside ml-4 text-gray-600">
+                        <li>Item must be unused and in original packaging.</li>
+                        <li>All original tags, accessories, and documentation must be included.</li>
+                        <li>The protective <em>polythene/film on the watch must be intact</em>.</li>
+                        <li>A <em>clear unboxing video (from start to finish)</em> is required for any exchange or damage claim.</li>
+                    </ol>
+                    <p>
+                        <strong>Store Credit:</strong> If you don’t wish to exchange immediately, the product value will be credited to your account as <em>store credit</em>, which can be used on any future purchase.
+                    </p>
+                    <p>
+                        <strong>Damaged / Defective Items:</strong> If the product is delivered damaged or defective, we will provide a free replacement of the same model (subject to availability), subject to unboxing video proof.
+                    </p>
+                    <p>Your trust matters to us — with store credit, your money always stays safe with Timekeepers.</p>
+                </div>
+            ),
+        }
+
+    ];
 
     const decreaseQty = () => {
         if (quantity > 1) {
@@ -63,7 +122,6 @@ const ProductDetailPage = () => {
         swipeToSlide: true,
 
         // lazyLoad: true,
-
         className: "slider variable-width",
         variableWidth: true,
         centerMode: true,
@@ -205,7 +263,7 @@ const ProductDetailPage = () => {
                                 </p>
 
 
-                                {catName !== "luxury watch" &&
+                                {product.catName !== "Luxury Watch" &&
                                     <div className="flex items-center space-x-4 my-4">
                                         <div>
                                             <div className="flex py-2 pe-3">
@@ -252,18 +310,24 @@ const ProductDetailPage = () => {
 
                                     <button
                                         onClick={() => {
-                                            console.log(`Added ${quantity} item(s) to cart`);
+
+                                            const priceText =
+                                                product.catName !== "Luxury Watch"
+                                                    ? `💰 *Price*: ~₹${parseInt(
+                                                        calculateAddedPrice(product.productOriginalPrice)
+                                                    )}~ → *₹${parseInt(
+                                                        calculateDiscountedPrice(product.productOriginalPrice)
+                                                    )}\n`
+                                                    : "";
+
                                             const whatsappUrl = `https://api.whatsapp.com/send?phone=${Brandphone}&text=${encodeURIComponent(
                                                 `📦 *Product Details*\n\n` +
                                                 `🛍️ *Product*: ${product.productName}\n` +
-                                                `💰 *Price*: ~₹${parseInt(
-                                                    calculateAddedPrice(product.productOriginalPrice)
-                                                )}~ → *₹${parseInt(
-                                                    calculateDiscountedPrice(product.productOriginalPrice)
-                                                )}*\n` +
+                                                priceText + // include only if condition passes
                                                 `🔗 *URL*: ${window.location.href}`
                                             )}`;
-                                            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+
+                                            window.open(whatsappUrl, "_blank", "noopener,noreferrer");
                                         }}
                                         className="h-14 px-6 py-2 font-semibold rounded-xl bg-black hover:bg-neutral-800 text-white transition-colors text-center"
                                     >
@@ -272,7 +336,39 @@ const ProductDetailPage = () => {
 
                                 </div>
 
-                                <div className="flex items-center space-x-4 my-4 gap-2">
+
+                                <section className="py-4 ">
+                                    <div className="container mx-auto px-4 text-center">
+                                        {/* Shipping Days Info */}
+                                        <p className="font-semibold mb-8 text-left">
+                                            SHIPPING DAYS: <span className="font-normal">4 TO 7 DAYS</span>
+                                        </p>
+
+                                        {/* Icons Section */}
+                                        <div className="grid grid-cols-3 md:grid-cols-3 gap-8">
+                                            {/* Free Delivery */}
+                                            <div className="flex flex-col items-center">
+                                                <Truck className="w-10 h-10 mb-3 text-black" />
+                                                <p className="text-sm font-medium">Free Delivery</p>
+                                            </div>
+
+                                            {/* 48 Hours Returnable */}
+                                            <div className="flex flex-col items-center">
+                                                <Recycle className="w-10 h-10 mb-3 text-black" />
+                                                <p className="text-sm font-medium">48 Hours Returnable</p>
+                                            </div>
+
+                                            {/* Cash on Delivery */}
+                                            <div className="flex flex-col items-center">
+                                                <Tag className="w-10 h-10 mb-3 text-black" />
+                                                <p className="text-sm font-medium">Cash On Delivery</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+
+                                {/* <div className="flex items-center space-x-4 my-4 gap-2">
                                     <div className="feature-card">
                                         <FontAwesomeIcon icon={faHeadset} className='mb-2 feature-icon' />
                                         <div className="font-bold text-neutral-950">Brand Support</div>
@@ -283,16 +379,49 @@ const ProductDetailPage = () => {
                                         <div className="font-bold text-neutral-950">7-Day Return</div>
                                     </div>
 
-                                    {/* <div className="feature-card">
+                                    <div className="feature-card">
                                         <FontAwesomeIcon icon={faMoneyBillWave} className='mb-2 feature-icon' />
                                         <div className="font-bold text-neutral-950 ">Cash on Delivery</div>
-                                    </div> */}
+                                    </div>
 
-                                    {/* <div className="feature-card">
+                                    <div className="feature-card">
                                         <FontAwesomeIcon icon={faCheckCircle} className='mb-2 feature-icon' />
                                         <div className="font-bold text-neutral-950">Assured Quality</div>
-                                    </div> */}
+                                    </div>
+                                </div> */}
+
+                                <div className="w-full max-w-2xl mx-auto my-6">
+                                    {accordions.map((accordion, index) => (
+                                        <div
+                                            key={index}
+                                            className="border border-neutral-300 border-s-0  border-e-0 overflow-hidden "
+                                        >
+                                            {/* Question */}
+                                            <button
+                                                onClick={() => toggle(index)}
+                                                className="w-full flex justify-between items-center px-6 py-4 text-left font-semibold bg-white hover:bg-gray-50"
+                                            >
+                                                {/* Section Title */}
+                                                <span className="text-base tracking-wide">{accordion.question}</span>
+                                                <span
+                                                    className={`transform transition-transform duration-300 ${openIndex === index ? "rotate-90" : "rotate-0"
+                                                        } text-lg`}
+                                                >
+                                                    &gt;
+                                                </span>
+                                            </button>
+
+                                            {/* Answer */}
+                                            <div
+                                                className={`transition-all duration-300 overflow-hidden bg-gray-50 px-6 ${openIndex === index ? "py-4" : "max-h-0 py-0"
+                                                    } text-sm text-gray-700`}
+                                            >
+                                                {accordion.answer}
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
+
 
                                 <div className="flex flex-col items-center p-6 bg-purple-100 rounded-xl max-w-3xl mx-auto">
                                     <h2 className="text-xl font-bold text-purple-900 mb-6">STEP BY STEP</h2>
@@ -374,7 +503,7 @@ const ProductDetailPage = () => {
 
 
                                 {/* Why Choose Us Section */}
-                                <div className="mt-10">
+                                {/* <div className="mt-10">
                                     <h2 className="text-2xl font-semibold mb-4 text-black">
                                         Why Choose Us?
                                     </h2>
@@ -404,7 +533,7 @@ const ProductDetailPage = () => {
                                             Just message us!
                                         </p>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
 
                         </div>
@@ -418,7 +547,6 @@ const ProductDetailPage = () => {
                             <Slider {...settings}>
                                 {simillarproducts.map(similarProduct => (
 
-
                                     <div key={similarProduct.productId}>
                                         <div className="w-50 mx-3">
                                             <Card
@@ -427,7 +555,6 @@ const ProductDetailPage = () => {
                                                 price={similarProduct.productOriginalPrice}
                                                 coverImg={similarProduct.featuredimg}
                                                 id={similarProduct.productId}
-
                                             />
                                         </div>
                                     </div>
