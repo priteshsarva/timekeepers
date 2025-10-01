@@ -8,6 +8,7 @@ import { FaInstagram, FaFacebookSquare, FaWhatsapp } from 'react-icons/fa';
 import './Footer.css'
 import { Link, useLocation } from 'react-router-dom';
 import { brand, BrandEmail, Brandphone, brandlogo, directWhatsapp, facebookHandel, instagramHandel } from '../data/data';
+import HappyCustomer from './HappyCustomer';
 
 const Footers = () => {
 
@@ -26,7 +27,7 @@ const Footers = () => {
   return (
     <>
       {/* ========== FOOTER ========== */}
-
+      <HappyCustomer />
       <div className="features-section">
         <div className="feature-card ">
           <FontAwesomeIcon icon={faThumbsUp} size='2x' className='mb-2 feature-icon' />

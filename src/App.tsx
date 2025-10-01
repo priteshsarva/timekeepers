@@ -1,6 +1,7 @@
 import './App.css'
 import { Routes, Route, Navigate } from 'react-router-dom';
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 

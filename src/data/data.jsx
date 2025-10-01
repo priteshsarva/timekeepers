@@ -4,6 +4,26 @@ import luxurywatches from '../assets/luxurywatches.png'
 // import logo from '../assets/logo_1.png'
 import logo from '../assets/logo.png'
 import AnnouncementBar from '../components/AnnouncementBar'
+import img1 from '../assets/happcustomer/img1.webp'
+import img2 from '../assets/happcustomer/img2.webp'
+import img3 from '../assets/happcustomer/img3.webp'
+import img4 from '../assets/happcustomer/img4.webp'
+import img5 from '../assets/happcustomer/img5.webp'
+import img6 from '../assets/happcustomer/img6.webp'
+import img7 from '../assets/happcustomer/img7.webp'
+import img8 from '../assets/happcustomer/img8.webp'
+import img9 from '../assets/happcustomer/img9.webp'
+import img10 from '../assets/happcustomer/img10.webp'
+import img11 from '../assets/happcustomer/img11.webp'
+import img12 from '../assets/happcustomer/img12.webp'
+import img13 from '../assets/happcustomer/img13.webp'
+import img14 from '../assets/happcustomer/img14.webp'
+import img15 from '../assets/happcustomer/img15.webp'
+import img16 from '../assets/happcustomer/img16.webp'
+import img17 from '../assets/happcustomer/img17.webp'
+import img18 from '../assets/happcustomer/img18.webp'
+
+
 
 export const brand = "Time keepers"
 export const BrandEmail = "priteshsarva.github.io/timekeepers/"
@@ -6420,6 +6440,9 @@ export const announcements = [
   }
 ];
 
+export const happyCustomerData = [
+  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18
+]
 
 export const toaddincutvalue = 2000;
 export const margin = 1000;

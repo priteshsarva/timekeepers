@@ -69,7 +69,7 @@ const Home = () => {
 
                     <SingleCollection products={product} />
                     {/* <ReadyToDispatch /> */}
-                    <Testimonials />
+                    {/* <Testimonials /> */}
                 </>}
         </>
     )

@@ -1,6 +1,5 @@
 import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 // import { useCart } from '../contexts/CartContext';
 import './ShoeCarousel.css'
 import { Link } from 'react-router-dom';
