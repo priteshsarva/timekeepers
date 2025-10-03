@@ -13,7 +13,7 @@ import ShippingPolicy from './pages/legal/ShippingPolicy.jsx';
 import ReturnPolicy from './pages/legal/ReturnPolicy.jsx';
 import PrivacyPolices from './pages/legal/PrivacyPolices.jsx';
 import ProductDetailPage from './pages/ProductDetailPage.jsx';
-import OriginalProductDetailPageWithprice from './pages/OriginalProductDetailPageWithprice.jsx';
+// import OriginalProductDetailPageWithprice from './pages/OriginalProductDetailPageWithprice.jsx';
 
 import AllProductPage from './pages/AllProductPage.jsx';
 
