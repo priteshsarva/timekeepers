@@ -59,11 +59,14 @@ const App = () => {
         <Route path="/ShippingPolicy" element={<ShippingPolicy />} />
         <Route path="/TermsOfService" element={<TermsOfService />} />
         <Route path="/productpage/:id" element={<ProductDetailPage />} />
-        <Route path={`/productpage/:id/${msterCode}`} element={<OriginalProductDetailPageWithprice />} />
+        <Route path={`/productpage/:id/${msterCode}`} element={<ProductDetailPage />} />
+        {/* OLD */}
+        {/* <Route path={`/productpage/:id/${msterCode}`} element={<OriginalProductDetailPageWithprice />} /> */}
 
         <Route path="/product" element={<AllProductPage />} />
         <Route path="/product/category/:category" element={<AllProductPage />} />
         <Route path="/product/brand/:brand" element={<AllProductPage />} />
+        <Route path="/search/brand/:brand" element={<AllProductPage />} />
         <Route path="/product/category/:category/brand/:brand" element={<AllProductPage />} />
 
         {/* Catch-all route for unmatched URLs */}

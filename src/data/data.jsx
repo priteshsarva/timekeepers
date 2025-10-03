@@ -30,9 +30,9 @@ export const BrandEmail = "priteshsarva.github.io/timekeepers/"
 export const Brandphone = "+91 6351955509"
 export const BrandUrl = "timekeepers.com"
 export const msterCode = "fkp"
-export const joinUsOnWhatsapp = 'https://wa.me/916351955509'
+export const joinUsOnWhatsapp = 'https://chat.whatsapp.com/LkWnLO5wTKu62Cx84e1yGA?mode=ems_copy_t'
 export const brandlogo = logo
-export const instagramHandel = 'https://www.instagram.com/'
+export const instagramHandel = 'https://www.instagram.com/times.keepers.in'
 export const facebookHandel = 'https://www.facebook.com'
 export const directWhatsapp = 'https://wa.me/916351955509'
 

@@ -17,6 +17,8 @@ const AllProductPage = () => {
     const { category, brand } = useParams();
     const navigate = useNavigate();
     const location = useLocation();
+    console.log(location.pathname);
+
 
     const [selectedFilters, setSelectedFilters] = useState({
         category: "",
@@ -43,16 +45,24 @@ const AllProductPage = () => {
         let baseUrl = `${baseUrl1}/product/search?`;
         const params = [];
 
-        if (filters.brand && filters.brand.trim() !== "") {
-            // Map certain brand names to query terms if needed
+        if (location.pathname.includes('search')) {
+            // console.log('from search');
 
-
-            const brandQuery = brandMap[filters.brand] || filters.brand;
-            params.push(`q=${encodeURIComponent(brandQuery.slice(0, 3))}`);
+            if (filters.brand && filters.brand.trim() !== "") {
+                // Map certain brand names to query terms if needed
+                const brandQuery = brandMap[filters.brand] || filters.brand;
+                params.push(`q=${encodeURIComponent(brandQuery)}`);
+            }
+        } else {
+            if (filters.brand && filters.brand.trim() !== "") {
+                // Map certain brand names to query terms if needed
+                const brandQuery = brandMap[filters.brand] || filters.brand;
+                params.push(`q=${encodeURIComponent(brandQuery.slice(0, 3))}`);
+            }
         }
 
-        if (filters.category && filters.category.trim() !== "") {
 
+        if (filters.category && filters.category.trim() !== "") {
 
             const categoryQuery = categorymap[filters.category] || filters.category;
             params.push(`category=${encodeURIComponent(categoryQuery)}`);
@@ -287,7 +297,7 @@ const AllProductPage = () => {
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 
 
-                            {products.slice(0, products.length - (products.length % 3)).map((product) => (
+                            {products.map((product) => (
                                 <div className="h-full flex flex-col">
                                     <Card
                                         key={product.productId}

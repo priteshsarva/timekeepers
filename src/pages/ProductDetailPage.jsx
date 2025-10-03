@@ -16,6 +16,9 @@ import {
     CubeIcon,
 } from "@heroicons/react/24/solid";
 import { Truck, Recycle, Tag } from "lucide-react";
+import { msterCode } from '../data/data'
+import { useLocation } from 'react-router-dom';
+
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
@@ -33,6 +36,8 @@ const ProductDetailPage = () => {
     const videoUrl = "https://www.w3schools.com/html/mov_bbb.mp4"; // Replace with your video URL
     const [quantity, setQuantity] = useState(1);
     const [openIndex, setOpenIndex] = useState(null);
+    const location = useLocation();
+
 
     const toggle = (index) => {
         setOpenIndex(openIndex === index ? null : index);
@@ -335,7 +340,10 @@ const ProductDetailPage = () => {
                                     </button>
 
                                 </div>
-
+                                {location.pathname.includes(msterCode) && <>
+                                    <p className="text-red-500 text-xl font-semibold">{product.productOriginalPrice}</p>
+                                    <a href={product.productUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 ">{product.productUrl}</a>
+                                </>}
 
                                 <section className="py-4 ">
                                     <div className="container mx-auto px-4 text-center">

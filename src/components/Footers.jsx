@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import ContactUsImg from '../assets/ContactUsImg.jpg'
-import { Truck } from 'lucide-react';
+import { Truck, Recycle, Tag , ShieldCheck} from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faHeadset, faLock } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
@@ -28,7 +28,7 @@ const Footers = () => {
     <>
       {/* ========== FOOTER ========== */}
       <HappyCustomer />
-      <div className="features-section">
+      {/* <div className="features-section">
         <div className="feature-card ">
           <FontAwesomeIcon icon={faThumbsUp} size='2x' className='mb-2 feature-icon' />
           <div className="feature-title">Quality Products</div>
@@ -50,7 +50,34 @@ const Footers = () => {
           <div className="feature-title">WhatsApp Help</div>
           <p className="feature-text">Need help fast? Message us on WhatsApp.</p>
         </div>
-      </div>
+      </div> */}
+
+      <section className="py-15 mb-10 bg-neutral-100">
+        <div className="container mx-auto px-4 text-center text-2xl">
+         
+
+          {/* Icons Section */}
+          <div className="grid grid-cols-3 md:grid-cols-3 gap-8">
+            {/* Free Delivery */}
+            <div className="flex flex-col items-center">
+              <Truck className="w-15 h-15 mb-3 text-black" />
+              <p className=" font-medium">Free Delivery</p>
+            </div>
+
+            {/* 48 Hours Returnable */}
+            <div className="flex flex-col items-center">
+              <Recycle className="w-15 h-15 mb-3 text-black" />
+              <p className=" font-medium">7 days replace/ exchange</p>
+            </div>
+
+            {/* Cash on Delivery */}
+            <div className="flex flex-col items-center">
+              <ShieldCheck className="w-15 h-15 mb-3 text-black" />
+              <p className=" font-medium">Secure Checkout</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <footer className="mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
 
@@ -95,8 +122,8 @@ const Footers = () => {
 
             <div className="mt-3 flex gap-3 text-sm justify-items-center">
               <Link to={instagramHandel}><FaInstagram className="text-2xl" /></Link>
-              <Link to={facebookHandel}><FaFacebookSquare className="text-2xl" /></Link>
-              <Link to={directWhatsapp}><FaWhatsapp className="text-2xl" /></Link>
+              {/* <Link to={facebookHandel}><FaFacebookSquare className="text-2xl" /></Link>
+              <Link to={directWhatsapp}><FaWhatsapp className="text-2xl" /></Link> */}
             </div>
 
           </div>

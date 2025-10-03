@@ -120,7 +120,7 @@ export default function NavBarWithSubmenu() {
                       </div>
                     </div>
                     <Link
-                      to={`/search/${searchTerm}`}
+                      to={`/search/brand/${searchTerm}`} 
                       onClick={handleCloseSearch}
                       className="w-full flex justify-center mt-4 btn fw-semibold px-4 rounded-none text-dark"
                     >
