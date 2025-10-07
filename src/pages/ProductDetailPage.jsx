@@ -563,6 +563,7 @@ const ProductDetailPage = () => {
                                                 price={similarProduct.productOriginalPrice}
                                                 coverImg={similarProduct.featuredimg}
                                                 id={similarProduct.productId}
+                                                catName={product.catName}
                                             />
                                         </div>
                                     </div>
