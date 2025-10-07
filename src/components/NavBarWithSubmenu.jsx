@@ -114,7 +114,8 @@ export default function NavBarWithSubmenu() {
                             title={product.productName}
                             price={product.productOriginalPrice}
                             coverImg={product.featuredimg}
-                            id={product.productId}
+                            id={product.productId} 
+                            catName={product.catName}
                           />
                         ))}
                       </div>
